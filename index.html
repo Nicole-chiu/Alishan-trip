@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>阿里山兩天一夜｜旅行任務</title>
 
 <style>
+
 :root{
   --bg1:#edf5ef;
   --bg2:#f8f2e8;
@@ -23,12 +25,14 @@
   box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
   margin:0;
   min-height:100%;
 }
 
 body{
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -55,12 +59,24 @@ body{
 }
 
 .app{
+
   max-width:760px;
   margin:auto;
-  padding:18px 14px 60px;
+
+  padding:
+    18px
+    14px
+    60px;
+
 }
 
+
+/* ============================= */
+/* 首頁 */
+/* ============================= */
+
 .hero{
+
   background:
     linear-gradient(
       145deg,
@@ -68,272 +84,542 @@ body{
       rgba(255,255,255,.72)
     );
 
-  border:1px solid rgba(255,255,255,.94);
+  border:
+    1px solid
+    rgba(255,255,255,.94);
+
   border-radius:28px;
+
   padding:18px;
 
   box-shadow:
-    0 18px 50px rgba(46,66,54,.12);
+    0 18px 50px
+    rgba(46,66,54,.12);
+
 }
 
+
+/* 首頁照片 */
+
 .hero-photo{
+
   width:100%;
-  aspect-ratio:1/1;
+
+  aspect-ratio:1 / 1;
+
   object-fit:cover;
-  border-radius:22px;
+
   display:block;
+
+  border-radius:22px;
+
   margin-bottom:18px;
 
   box-shadow:
-    0 12px 30px rgba(46,66,54,.14);
+    0 12px 30px
+    rgba(46,66,54,.14);
+
 }
+
 
 .eyebrow{
+
   font-size:12px;
+
   letter-spacing:.18em;
+
   color:var(--green);
+
   font-weight:800;
+
 }
+
 
 h1{
-  margin:6px 0 4px;
+
+  margin:
+    6px 0 4px;
+
   font-size:34px;
+
   line-height:1.1;
+
 }
+
 
 .date{
+
   color:var(--green);
+
   font-size:17px;
+
   font-weight:800;
+
 }
+
 
 .sub{
+
   color:var(--muted);
-  margin:8px 0 0;
+
+  margin:
+    8px 0 0;
+
   font-size:14px;
+
   line-height:1.55;
+
 }
+
+
+/* ============================= */
+/* 統計資訊 */
+/* ============================= */
 
 .stats{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:8px;
+
   margin-top:18px;
+
 }
+
 
 .stat{
+
   background:#f6f9f5;
-  border:1px solid var(--line);
+
+  border:
+    1px solid
+    var(--line);
+
   border-radius:16px;
+
   padding:11px;
+
   text-align:center;
+
 }
+
 
 .stat b{
+
   display:block;
+
   font-size:20px;
+
 }
+
 
 .stat span{
+
   font-size:11px;
+
   color:var(--muted);
+
 }
+
+
+/* ============================= */
+/* 進度條 */
+/* ============================= */
 
 .progress-wrap{
+
   margin-top:15px;
+
 }
+
 
 .progress-head{
+
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   font-size:12px;
+
   color:var(--muted);
+
   margin-bottom:6px;
+
 }
+
 
 .bar{
+
   height:10px;
+
   border-radius:999px;
+
   background:#e5ebe5;
+
   overflow:hidden;
+
 }
 
+
 .bar > div{
+
   height:100%;
+
   width:0;
+
   background:
     linear-gradient(
       90deg,
       var(--green),
       var(--green2)
     );
+
   transition:.35s;
+
 }
+
+
+/* ============================= */
+/* Day 分頁 */
+/* ============================= */
 
 .tabs{
+
   display:flex;
+
   gap:8px;
-  margin:16px 0;
+
+  margin:
+    16px 0;
+
   position:sticky;
+
   top:8px;
+
   z-index:10;
+
 }
+
 
 .tab{
+
   flex:1;
+
   border:0;
+
   border-radius:15px;
+
   padding:12px;
-  background:rgba(255,255,255,.76);
+
+  background:
+    rgba(255,255,255,.76);
+
   color:var(--muted);
+
   font-weight:800;
+
   box-shadow:
-    0 6px 18px rgba(46,66,54,.08);
+    0 6px 18px
+    rgba(46,66,54,.08);
+
 }
+
 
 .tab.active{
+
   background:var(--ink);
+
   color:white;
+
 }
+
 
 .panel{
+
   display:none;
+
 }
+
 
 .panel.active{
+
   display:block;
+
 }
+
+
+/* ============================= */
+/* 任務卡 */
+/* ============================= */
 
 .quest{
+
   background:var(--card);
-  border:1px solid rgba(255,255,255,.92);
+
+  border:
+    1px solid
+    rgba(255,255,255,.92);
+
   border-radius:22px;
+
   padding:18px;
-  margin:12px 0;
+
+  margin:
+    12px 0;
 
   box-shadow:
-    0 10px 28px rgba(46,66,54,.08);
+    0 10px 28px
+    rgba(46,66,54,.08);
 
   transition:.25s;
+
 }
+
 
 .quest.done{
+
   opacity:.62;
+
 }
+
 
 .qhead{
+
   display:flex;
+
   gap:12px;
+
   align-items:flex-start;
+
 }
+
 
 .icon{
+
   width:42px;
+
   height:42px;
+
   border-radius:14px;
+
   display:grid;
+
   place-items:center;
+
   background:#eef4ef;
+
   font-size:22px;
-  flex:0 0 auto;
+
+  flex:
+    0 0 auto;
+
 }
+
 
 .qtext{
+
   flex:1;
+
 }
+
 
 .qtext h3{
+
   margin:0;
+
   font-size:17px;
+
 }
+
 
 .qtext p{
-  margin:5px 0 0;
+
+  margin:
+    5px 0 0;
+
   color:var(--muted);
+
   font-size:13px;
+
   line-height:1.5;
+
 }
+
 
 .meta{
+
   display:flex;
+
   gap:7px;
+
   flex-wrap:wrap;
+
   margin-top:10px;
+
 }
+
 
 .pill{
+
   font-size:11px;
-  padding:5px 8px;
+
+  padding:
+    5px 8px;
+
   border-radius:999px;
+
   background:#eef3ed;
+
   color:var(--green);
+
   font-weight:800;
+
 }
+
 
 .warn{
+
   background:var(--warn);
+
   color:#7a612d;
+
 }
+
+
+/* ============================= */
+/* 完成按鈕 */
+/* ============================= */
 
 .check{
+
   width:30px;
+
   height:30px;
+
   border-radius:50%;
-  border:2px solid #b7c8ba;
+
+  border:
+    2px solid
+    #b7c8ba;
+
   background:white;
+
   color:white;
+
   font-size:17px;
+
   display:grid;
+
   place-items:center;
-  flex:0 0 auto;
+
+  flex:
+    0 0 auto;
+
 }
+
 
 .check.on{
+
   background:var(--green);
+
   border-color:var(--green);
+
 }
+
+
+/* ============================= */
+/* 二選一 */
+/* ============================= */
 
 .choice-wrap{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:10px;
+
   margin-top:12px;
+
 }
+
 
 .choice{
-  border:1.5px solid var(--line);
+
+  border:
+    1.5px solid
+    var(--line);
+
   background:#fafcf9;
+
   border-radius:17px;
+
   padding:13px;
+
   text-align:left;
+
   color:var(--ink);
+
   transition:.2s;
+
 }
+
 
 .choice.selected{
-  border-color:var(--green);
+
+  border-color:
+    var(--green);
+
   box-shadow:
-    0 0 0 3px rgba(94,125,105,.12);
+    0 0 0 3px
+    rgba(94,125,105,.12);
+
 }
+
 
 .choice b{
+
   display:block;
-  margin:4px 0 5px;
+
+  margin:
+    4px 0 5px;
+
 }
+
 
 .choice small{
+
   color:var(--muted);
+
   line-height:1.45;
+
 }
+
 
 .choice .tag{
+
   font-size:10px;
+
   color:var(--green);
+
   font-weight:900;
+
   letter-spacing:.04em;
+
 }
 
+
+/* ============================= */
+/* 準備清單 */
+/* ============================= */
+
 .mission{
+
   background:
     linear-gradient(
       145deg,
@@ -342,49 +628,96 @@ h1{
     );
 
   color:white;
+
   border-radius:24px;
+
   padding:20px;
+
   margin-top:16px;
+
 }
+
 
 .mission h2{
-  margin:0 0 8px;
+
+  margin:
+    0 0 8px;
+
   font-size:20px;
+
 }
+
 
 .todo{
+
   display:flex;
+
   gap:10px;
+
   align-items:center;
-  padding:10px 0;
+
+  padding:
+    10px 0;
+
   border-bottom:
-    1px solid rgba(255,255,255,.12);
+    1px solid
+    rgba(255,255,255,.12);
+
 }
+
 
 .todo:last-child{
+
   border-bottom:0;
+
 }
+
 
 .todo input{
+
   width:18px;
+
   height:18px;
+
   accent-color:#cfe0d1;
+
 }
+
 
 .todo label{
+
   font-size:14px;
+
 }
+
+
+/* ============================= */
+/* Footer */
+/* ============================= */
 
 .footer{
+
   text-align:center;
+
   color:var(--muted);
+
   font-size:12px;
+
   margin-top:18px;
+
 }
 
+
+/* ============================= */
+/* 提示訊息 */
+/* ============================= */
+
 .toast{
+
   position:fixed;
+
   left:50%;
+
   bottom:26px;
 
   transform:
@@ -392,842 +725,1422 @@ h1{
     translateY(30px);
 
   background:#213229;
+
   color:white;
 
-  padding:11px 16px;
+  padding:
+    11px 16px;
+
   border-radius:999px;
+
   font-size:13px;
 
   opacity:0;
+
   pointer-events:none;
 
   transition:.3s;
+
   z-index:30;
+
 }
 
+
 .toast.show{
+
   opacity:1;
 
   transform:
     translateX(-50%)
     translateY(0);
+
 }
+
+
+/* ============================= */
+/* 手機版 */
+/* ============================= */
 
 @media(max-width:560px){
 
   h1{
+
     font-size:30px;
+
   }
 
   .choice-wrap{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 <div class="app">
 
-  <section class="hero">
 
-    <img
-      src="cover.jpg"
-      class="hero-photo"
-      alt="我們的旅行封面"
-    >
+<!-- ============================= -->
+<!-- 首頁 -->
+<!-- ============================= -->
 
-    <div class="eyebrow">
-      ALISHAN QUEST
-    </div>
+<section class="hero">
 
-    <h1>
-      阿里山兩天一夜
-    </h1>
 
-    <div class="date">
-      2027.02.13 → 02.14
-    </div>
+<img
+  src="cover.jpg.PNG"
+  class="hero-photo"
+  alt="我們的旅行封面"
+>
 
-    <p class="sub">
-      旅行不是趕行程，是把每個小任務慢慢解鎖。
-    </p>
 
-    <div class="stats">
+<div class="eyebrow">
 
-      <div class="stat">
-        <b id="doneCount">0</b>
-        <span>完成任務</span>
-      </div>
-
-      <div class="stat">
-        <b id="choiceText">未選</b>
-        <span>Day 1 路線</span>
-      </div>
-
-      <div class="stat">
-        <b id="todoCount">0/6</b>
-        <span>出發前確認</span>
-      </div>
-
-    </div>
-
-    <div class="progress-wrap">
-
-      <div class="progress-head">
-        <span>旅行準備度</span>
-        <span id="pct">0%</span>
-      </div>
-
-      <div class="bar">
-        <div id="bar"></div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <div class="tabs">
-
-    <button
-      class="tab active"
-      data-tab="d1">
-      Day 1
-    </button>
-
-    <button
-      class="tab"
-      data-tab="d2">
-      Day 2
-    </button>
-
-    <button
-      class="tab"
-      data-tab="prep">
-      準備清單
-    </button>
-
-  </div>
-
-
-  <section
-    class="panel active"
-    id="d1">
-
-
-    <div
-      class="quest"
-      data-q="1">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🚗
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            09:30｜燕巢出發
-          </h3>
-
-          <p>
-            預留山路與途中停留時間，不需要趕行程。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="2">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🎂
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            11:00～11:20｜山腳甜食取蛋糕
-          </h3>
-
-          <p>
-            取完蛋糕後繼續上山，建議準備保冷袋＋冰寶。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="3">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🍴
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            13:00～14:20｜游芭絲鄒族風味餐
-          </h3>
-
-          <p>
-            吃一餐有阿里山旅行感的特色料理。
-          </p>
-
-          <div class="meta">
-
-            <span class="pill warn">
-              尚未訂位
-            </span>
-
-          </div>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div class="quest">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🎮
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            14:20～15:00｜午餐後二選一
-          </h3>
-
-          <p>
-            這一關交給另一半決定。
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="choice-wrap">
-
-        <button
-          class="choice"
-          data-choice="茶霧之道">
-
-          <span class="tag">
-            A · 健走行
-          </span>
-
-          <b>
-            茶霧之道
-          </b>
-
-          <small>
-            走茶園步道、看山景，活動量比較多。
-          </small>
-
-        </button>
-
-
-        <button
-          class="choice"
-          data-choice="象山觀景台">
-
-          <span class="tag">
-            B · 拍照行
-          </span>
-
-          <b>
-            隙頂象山觀景台
-          </b>
-
-          <small>
-            輕鬆看景、拍照，不用走太多路。
-          </small>
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="4">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🏡
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            15:00～16:00｜附近住宿 Check-in
-          </h3>
-
-          <p>
-            放行李、把蛋糕冰好，先休息一下。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="5">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🌄
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            16:00～18:10｜附近走走＋看夕陽
-          </h3>
-
-          <p>
-            住宿附近散步、拍照、看山景，慢慢等晚餐。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="6">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🍲
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            18:30｜住宿晚餐・火鍋
-          </h3>
-
-          <p>
-            看完夕陽直接回住宿吃飯。
-          </p>
-
-          <div class="meta">
-
-            <span class="pill warn">
-              尚未預訂
-            </span>
-
-          </div>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="7">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🌙
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            20:00 後｜吃蛋糕・自由時間
-          </h3>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section
-    class="panel"
-    id="d2">
-
-
-    <div
-      class="quest"
-      data-q="8">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🌅
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            06:20 左右｜看日出
-          </h3>
-
-          <p>
-            依當天天氣狀況為主。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="9">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🥾
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            日出後｜二延平步道走走
-          </h3>
-
-          <p>
-            輕鬆散步、拍照，不趕行程。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="10">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🥐
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            之後｜回住宿吃早餐
-          </h3>
-
-          <p>
-            早餐供應時間尚待確認。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="11">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🧳
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            11:00 左右｜Check-out
-          </h3>
-
-          <p>
-            休息、整理行李後退房。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="12">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🧭
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            Check-out 後｜自由活動
-          </h3>
-
-          <p>
-            看當天心情、天氣與體力再決定去哪裡走走。
-          </p>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="quest"
-      data-q="13">
-
-      <div class="qhead">
-
-        <div class="icon">
-          🏠
-        </div>
-
-        <div class="qtext">
-
-          <h3>
-            下山回燕巢
-          </h3>
-
-        </div>
-
-        <button class="check">
-          ✓
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section
-    class="panel"
-    id="prep">
-
-    <div class="mission">
-
-      <h2>
-        出發前任務清單
-      </h2>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t1">
-
-        <label for="t1">
-          游芭絲鄒族風味餐訂位
-        </label>
-
-      </div>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t2">
-
-        <label for="t2">
-          住宿火鍋晚餐預訂
-        </label>
-
-      </div>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t3">
-
-        <label for="t3">
-          住宿早餐供應時間
-        </label>
-
-      </div>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t4">
-
-        <label for="t4">
-          Day 2 當日日出時間／天氣
-        </label>
-
-      </div>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t5">
-
-        <label for="t5">
-          Day 1 午餐後路線確認
-        </label>
-
-      </div>
-
-
-      <div class="todo">
-
-        <input
-          type="checkbox"
-          id="t6">
-
-        <label for="t6">
-          出發前最後確認行李與保冷袋
-        </label>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <div class="footer">
-    進度會自動保存在這台裝置的瀏覽器裡 ✦
-  </div>
+ALISHAN QUEST
 
 </div>
+
+
+<h1>
+
+阿里山兩天一夜
+
+</h1>
+
+
+<div class="date">
+
+2027.02.13 → 02.14
+
+</div>
+
+
+<p class="sub">
+
+旅行不是趕行程，
+是把每個小任務慢慢解鎖。
+
+</p>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<b id="doneCount">
+
+0
+
+</b>
+
+<span>
+
+完成任務
+
+</span>
+
+</div>
+
+
+
+<div class="stat">
+
+<b id="choiceText">
+
+未選
+
+</b>
+
+<span>
+
+Day 1 路線
+
+</span>
+
+</div>
+
+
+
+<div class="stat">
+
+<b id="todoCount">
+
+0/6
+
+</b>
+
+<span>
+
+出發前確認
+
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="progress-wrap">
+
+
+<div class="progress-head">
+
+<span>
+
+旅行準備度
+
+</span>
+
+<span id="pct">
+
+0%
+
+</span>
+
+</div>
+
+
+
+<div class="bar">
+
+<div id="bar">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- Day Tabs -->
+<!-- ============================= -->
+
+<div class="tabs">
+
+
+<button
+  class="tab active"
+  data-tab="d1">
+
+Day 1
+
+</button>
+
+
+<button
+  class="tab"
+  data-tab="d2">
+
+Day 2
+
+</button>
+
+
+<button
+  class="tab"
+  data-tab="prep">
+
+準備清單
+
+</button>
+
+
+</div>
+
+
+
+<!-- ============================= -->
+<!-- DAY 1 -->
+<!-- ============================= -->
+
+<section
+  class="panel active"
+  id="d1">
+
+
+
+<!-- 出發 -->
+
+<div
+  class="quest"
+  data-q="1">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🚗
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+09:30｜燕巢出發
+
+</h3>
+
+
+<p>
+
+預留山路與途中停留時間，
+不用趕行程。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 蛋糕 -->
+
+<div
+  class="quest"
+  data-q="2">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🎂
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+11:00～11:20｜山腳甜食取蛋糕
+
+</h3>
+
+
+<p>
+
+取完蛋糕後繼續上山，
+建議準備保冷袋＋冰寶。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 午餐 -->
+
+<div
+  class="quest"
+  data-q="3">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🍴
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+13:00～14:20｜游芭絲鄒族風味餐
+
+</h3>
+
+
+<p>
+
+吃一餐有阿里山旅行感的特色料理。
+
+</p>
+
+
+<div class="meta">
+
+
+<span class="pill warn">
+
+尚未訂位
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 二選一 -->
+
+<div class="quest">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🎮
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+14:20～15:00｜午餐後二選一
+
+</h3>
+
+
+<p>
+
+這一關交給另一半決定。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="choice-wrap">
+
+
+<button
+  class="choice"
+  data-choice="茶霧之道">
+
+
+<span class="tag">
+
+A · 健走行
+
+</span>
+
+
+<b>
+
+茶霧之道
+
+</b>
+
+
+<small>
+
+走茶園步道、看山景，
+活動量比較多。
+
+</small>
+
+
+</button>
+
+
+
+<button
+  class="choice"
+  data-choice="象山觀景台">
+
+
+<span class="tag">
+
+B · 拍照行
+
+</span>
+
+
+<b>
+
+隙頂象山觀景台
+
+</b>
+
+
+<small>
+
+輕鬆看景、拍照，
+不用走太多路。
+
+</small>
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- Check in -->
+
+<div
+  class="quest"
+  data-q="4">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🏡
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+15:00～16:00｜附近住宿 Check-in
+
+</h3>
+
+
+<p>
+
+放行李、把蛋糕冰好，
+先休息一下。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 夕陽 -->
+
+<div
+  class="quest"
+  data-q="5">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🌄
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+16:00～18:10｜附近走走＋看夕陽
+
+</h3>
+
+
+<p>
+
+住宿附近散步、拍照、看山景，
+慢慢等晚餐。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 晚餐 -->
+
+<div
+  class="quest"
+  data-q="6">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🍲
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+18:30｜住宿晚餐・火鍋
+
+</h3>
+
+
+<p>
+
+看完夕陽直接回住宿吃飯。
+
+</p>
+
+
+<div class="meta">
+
+
+<span class="pill warn">
+
+尚未預訂
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 晚上 -->
+
+<div
+  class="quest"
+  data-q="7">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🌙
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+20:00 後｜吃蛋糕・自由時間
+
+</h3>
+
+
+<p>
+
+慢慢休息，
+享受山上的晚上。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- DAY 2 -->
+<!-- ============================= -->
+
+<section
+  class="panel"
+  id="d2">
+
+
+
+<!-- 日出 -->
+
+<div
+  class="quest"
+  data-q="8">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🌅
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+06:20 左右｜看日出
+
+</h3>
+
+
+<p>
+
+依當天天氣狀況為主。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 二延平 -->
+
+<div
+  class="quest"
+  data-q="9">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🥾
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+日出後｜二延平步道走走
+
+</h3>
+
+
+<p>
+
+輕鬆散步、拍照，
+不用趕行程。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 早餐 -->
+
+<div
+  class="quest"
+  data-q="10">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🥐
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+之後｜回住宿吃早餐
+
+</h3>
+
+
+<p>
+
+早餐供應時間尚待確認。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- Checkout -->
+
+<div
+  class="quest"
+  data-q="11">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🧳
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+11:00 左右｜Check-out
+
+</h3>
+
+
+<p>
+
+休息、整理行李後退房。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 自由活動 -->
+
+<div
+  class="quest"
+  data-q="12">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🧭
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+Check-out 後｜自由活動
+
+</h3>
+
+
+<p>
+
+看當天心情、天氣與體力，
+再決定要去哪裡走走。
+
+</p>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 回家 -->
+
+<div
+  class="quest"
+  data-q="13">
+
+
+<div class="qhead">
+
+
+<div class="icon">
+
+🏠
+
+</div>
+
+
+<div class="qtext">
+
+
+<h3>
+
+下山回燕巢
+
+</h3>
+
+
+</div>
+
+
+<button class="check">
+
+✓
+
+</button>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- 準備清單 -->
+<!-- ============================= -->
+
+<section
+  class="panel"
+  id="prep">
+
+
+<div class="mission">
+
+
+<h2>
+
+出發前任務清單
+
+</h2>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t1">
+
+
+<label for="t1">
+
+游芭絲鄒族風味餐訂位
+
+</label>
+
+
+</div>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t2">
+
+
+<label for="t2">
+
+住宿火鍋晚餐預訂
+
+</label>
+
+
+</div>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t3">
+
+
+<label for="t3">
+
+住宿早餐供應時間
+
+</label>
+
+
+</div>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t4">
+
+
+<label for="t4">
+
+Day 2 日出時間／天氣確認
+
+</label>
+
+
+</div>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t5">
+
+
+<label for="t5">
+
+Day 1 午餐後路線確認
+
+</label>
+
+
+</div>
+
+
+
+<div class="todo">
+
+
+<input
+  type="checkbox"
+  id="t6">
+
+
+<label for="t6">
+
+出發前確認行李與蛋糕保冷袋
+
+</label>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<div class="footer">
+
+進度會自動保存在這台裝置的瀏覽器裡 ✦
+
+</div>
+
+
+</div>
+
 
 
 <div
   class="toast"
   id="toast">
-  任務完成 +1 ✨
+
+任務完成 +1 ✨
+
 </div>
+
 
 
 <script>
 
+
 const $ =
-  s => document.querySelector(s);
+  s =>
+    document.querySelector(s);
+
 
 const $$ =
-  s => document.querySelectorAll(s);
+  s =>
+    document.querySelectorAll(s);
+
 
 
 const state =
+
   JSON.parse(
-    localStorage.getItem('alishanQuest')
+
+    localStorage.getItem(
+      'alishanQuest'
+    )
+
     ||
+
     '{"done":[],"choice":"","todos":[]}'
+
   );
+
 
 
 function save(){
 
+
   localStorage.setItem(
+
     'alishanQuest',
+
     JSON.stringify(state)
+
   );
 
+
   render();
+
 
 }
 
 
+
 function render(){
+
 
   $$('.quest[data-q]')
   .forEach(q=>{
 
+
     const id =
       q.dataset.q;
 
+
     const on =
       state.done.includes(id);
+
 
     q.classList.toggle(
       'done',
       on
     );
 
-    q.querySelector('.check')
+
+    q.querySelector(
+      '.check'
+    )
     .classList.toggle(
       'on',
       on
     );
 
+
   });
+
 
 
   $$('.choice')
   .forEach(c=>{
 
+
     c.classList.toggle(
+
       'selected',
-      c.dataset.choice === state.choice
+
+      c.dataset.choice
+      ===
+      state.choice
+
     );
 
+
   });
 
 
-  $$('input[type=checkbox]')
+
+  $$(
+    'input[type=checkbox]'
+  )
   .forEach((x,i)=>{
 
+
     x.checked =
-      state.todos.includes(i+1);
+
+      state.todos.includes(
+        i+1
+      );
+
 
   });
+
 
 
   $('#doneCount')
   .textContent =
+
     state.done.length;
+
 
 
   $('#choiceText')
   .textContent =
-    state.choice || '未選';
+
+    state.choice
+    ||
+    '未選';
+
 
 
   $('#todoCount')
   .textContent =
-    state.todos.length + '/6';
+
+    state.todos.length
+    +
+    '/6';
+
 
 
   const score =
+
     state.done.length
+
     +
-    (state.choice ? 1 : 0)
+
+    (
+      state.choice
+      ?
+      1
+      :
+      0
+    )
+
     +
+
     state.todos.length;
 
 
+
   const pct =
+
     Math.round(
-      score / 20 * 100
+
+      score
+      /
+      20
+      *
+      100
+
     );
+
 
 
   $('#pct')
   .textContent =
-    pct + '%';
+
+    pct
+    +
+    '%';
+
 
 
   $('#bar')
   .style.width =
-    pct + '%';
+
+    pct
+    +
+    '%';
+
 
 }
 
 
+
 function toast(msg){
+
 
   const t =
     $('#toast');
@@ -1244,67 +2157,93 @@ function toast(msg){
 
   setTimeout(()=>{
 
+
     t.classList.remove(
       'show'
     );
 
+
   },1100);
 
+
 }
+
 
 
 $$('.check')
 .forEach(btn=>{
 
+
   btn.addEventListener(
     'click',
     ()=>{
 
+
       const id =
-        btn.closest('.quest')
+
+        btn
+        .closest('.quest')
         .dataset.q;
 
 
+
       const i =
-        state.done.indexOf(id);
+
+        state.done
+        .indexOf(id);
+
 
 
       if(i >= 0){
+
 
         state.done.splice(
           i,
           1
         );
 
+
       }
+
       else{
 
+
         state.done.push(id);
+
 
         toast(
           '任務完成 +1 ✨'
         );
 
+
       }
+
 
 
       save();
 
+
     }
   );
 
+
 });
+
 
 
 $$('.choice')
 .forEach(btn=>{
 
+
   btn.addEventListener(
     'click',
     ()=>{
 
+
       state.choice =
+
         btn.dataset.choice;
+
 
 
       toast(
@@ -1312,27 +2251,38 @@ $$('.choice')
       );
 
 
+
       save();
+
 
     }
   );
 
+
 });
 
 
-$$('input[type=checkbox]')
+
+$$(
+  'input[type=checkbox]'
+)
 .forEach((x,i)=>{
+
 
   x.addEventListener(
     'change',
     ()=>{
+
 
       const id =
         i + 1;
 
 
       const idx =
-        state.todos.indexOf(id);
+
+        state.todos
+        .indexOf(id);
+
 
 
       if(
@@ -1341,9 +2291,12 @@ $$('input[type=checkbox]')
         idx < 0
       ){
 
+
         state.todos.push(id);
 
+
       }
+
 
 
       if(
@@ -1352,37 +2305,48 @@ $$('input[type=checkbox]')
         idx >= 0
       ){
 
+
         state.todos.splice(
           idx,
           1
         );
 
+
       }
+
 
 
       save();
 
+
     }
   );
 
+
 });
+
 
 
 $$('.tab')
 .forEach(btn=>{
 
+
   btn.addEventListener(
     'click',
     ()=>{
 
+
       $$('.tab')
       .forEach(x=>{
+
 
         x.classList.remove(
           'active'
         );
 
+
       });
+
 
 
       btn.classList.add(
@@ -1390,30 +2354,44 @@ $$('.tab')
       );
 
 
+
       $$('.panel')
       .forEach(x=>{
+
 
         x.classList.remove(
           'active'
         );
 
+
       });
 
 
-      $('#'+btn.dataset.tab)
+
+      $(
+        '#'
+        +
+        btn.dataset.tab
+      )
       .classList.add(
         'active'
       );
 
+
     }
   );
+
 
 });
 
 
+
 render();
+
 
 </script>
 
+
 </body>
+
 </html>
